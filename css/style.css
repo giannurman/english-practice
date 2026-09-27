@@ -16,6 +16,8 @@
   --product: #65a30d;
   --design: #e11d48;
   --security: #334155;
+  --pmo: #0e7490;
+  --bizops: #a16207;
   --radius: 14px;
   --shadow: 0 1px 3px rgba(0, 0, 0, .06), 0 4px 12px rgba(0, 0, 0, .04);
   color-scheme: light;
@@ -179,6 +181,8 @@ h2 { font-size: 19px; margin: 28px 0 10px; }
 .cat-product { --cat: var(--product); }
 .cat-design { --cat: var(--design); }
 .cat-security { --cat: var(--security); }
+.cat-pmo { --cat: var(--pmo); }
+.cat-bizops { --cat: var(--bizops); }
 
 .big-card { padding: 20px; }
 .big-card .emoji { font-size: 40px; }

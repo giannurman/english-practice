@@ -18,6 +18,8 @@
     product: { group: "kerja", name: "Product Manager", nameId: "Product Manager", emoji: "💡", desc: "Riset pengguna, roadmap, prioritas, A/B test, dan peluncuran produk digital." },
     design: { group: "kerja", name: "UI/UX Designer", nameId: "UI/UX Designer", emoji: "🎨", desc: "Usability test, design critique, handoff, design QA, dan klien." },
     security: { group: "kerja", name: "IT Security", nameId: "IT Security", emoji: "🛡️", desc: "SOC, kerentanan aplikasi, pentest, audit, dan komunikasi risiko." },
+    pmo:    { group: "kerja", name: "PMO / Portfolio", nameId: "PMO / Portfolio", emoji: "🗃️", desc: "Prioritas & pendanaan proyek, kapasitas, stage-gate, dan laporan portofolio." },
+    bizops: { group: "kerja", name: "Business Operations", nameId: "Business Operations", emoji: "⚙️", desc: "KPI, perbaikan proses, SOP, vendor, anggaran, dan koordinasi antar divisi." },
   };
 
   const ROLE_META = {
@@ -78,6 +80,16 @@
     "GRC Analyst": { emoji: "⚖️", bg: "#e2e8f0", fg: "#334155" },
     "Engineering Manager": { emoji: "👥", bg: "#dcfce7", fg: "#15803d" },
     CISO:      { emoji: "🏰", bg: "#e2e8f0", fg: "#334155" },
+    // PMO / Portfolio
+    "PMO Lead": { emoji: "🗃️", bg: "#cffafe", fg: "#0e7490" },
+    "Program Manager": { emoji: "🗺️", bg: "#e0e7ff", fg: "#4338ca" },
+    "Finance Manager": { emoji: "💵", bg: "#dcfce7", fg: "#15803d" },
+    // Business Operations
+    "Operations Manager": { emoji: "⚙️", bg: "#fef3c7", fg: "#a16207" },
+    COO:       { emoji: "🏗️", bg: "#ede9fe", fg: "#6d28d9" },
+    "Team Lead": { emoji: "🔔", bg: "#ffedd5", fg: "#c2410c" },
+    Vendor:    { emoji: "🚚", bg: "#e2e8f0", fg: "#334155" },
+    "Process Analyst": { emoji: "🗒️", bg: "#cffafe", fg: "#0e7490" },
   };
   const FALLBACK_ROLE = { emoji: "🙂", bg: "#f1f5f9", fg: "#475569" };
 
