@@ -2,15 +2,21 @@
   "use strict";
 
   // ---------- Metadata ----------
+  // Tab di beranda. Key dipakai di URL (#/rumah, #/kerja), jadi jangan sama dengan key kategori.
+  const GROUPS = {
+    rumah: { label: "Rumah", emoji: "🏠" },
+    kerja: { label: "Kerja", emoji: "💼" },
+  };
+
   const CATEGORIES = {
-    family: { name: "Family", nameId: "Keluarga di Rumah", emoji: "🏠", desc: "Ayah, Bunda, Kakak & Adik — percakapan sehari-hari di rumah." },
-    kids:   { name: "Kids", nameId: "Untuk Anak", emoji: "🧸", desc: "Kalimat super pendek untuk Adik (3 th) & Kakak (6 th)." },
-    office: { name: "Office", nameId: "Kantor — Tech Lead", emoji: "💼", desc: "Stand-up, code review, 1-on-1, incident, dan lainnya." },
-    casual: { name: "Office Casual", nameId: "Kantor — Santai", emoji: "☕", desc: "Obrolan pantry, makan siang, hobi, dan momen kantor." },
-    sales:  { name: "Tech Sales", nameId: "Sales — Tech B2B", emoji: "📈", desc: "Discovery call, demo, negosiasi, dan renewal — dari sisi sales dan pelanggan." },
-    pm:     { name: "Project Manager", nameId: "Project Manager — IT", emoji: "📌", desc: "Kickoff, status update, risiko, change request, stakeholder, hingga go-live." },
-    product: { name: "Product Manager", nameId: "Product Manager", emoji: "💡", desc: "Riset pengguna, roadmap, prioritas, A/B test, dan peluncuran produk digital." },
-    design: { name: "UI/UX Designer", nameId: "UI/UX Designer", emoji: "🎨", desc: "Usability test, design critique, handoff, design QA, dan klien." },
+    family: { group: "rumah", name: "Family", nameId: "Keluarga di Rumah", emoji: "🏠", desc: "Ayah, Bunda, Kakak & Adik — percakapan sehari-hari di rumah." },
+    kids:   { group: "rumah", name: "Kids", nameId: "Untuk Anak", emoji: "🧸", desc: "Kalimat super pendek untuk Adik (3 th) & Kakak (6 th)." },
+    office: { group: "kerja", name: "Office", nameId: "Kantor — Tech Lead", emoji: "💼", desc: "Stand-up, code review, 1-on-1, incident, dan lainnya." },
+    casual: { group: "kerja", name: "Office Casual", nameId: "Kantor — Santai", emoji: "☕", desc: "Obrolan pantry, makan siang, hobi, dan momen kantor." },
+    sales:  { group: "kerja", name: "Tech Sales", nameId: "Sales — Tech B2B", emoji: "📈", desc: "Discovery call, demo, negosiasi, dan renewal — dari sisi sales dan pelanggan." },
+    pm:     { group: "kerja", name: "Project Manager", nameId: "Project Manager — IT", emoji: "📌", desc: "Kickoff, status update, risiko, change request, stakeholder, hingga go-live." },
+    product: { group: "kerja", name: "Product Manager", nameId: "Product Manager", emoji: "💡", desc: "Riset pengguna, roadmap, prioritas, A/B test, dan peluncuran produk digital." },
+    design: { group: "kerja", name: "UI/UX Designer", nameId: "UI/UX Designer", emoji: "🎨", desc: "Usability test, design critique, handoff, design QA, dan klien." },
   };
 
   const ROLE_META = {
@@ -157,8 +163,24 @@
   });
 
   // ---------- Views ----------
-  function viewHome() {
-    const cats = Object.keys(CATEGORIES).map((key) => {
+  function viewHome(group) {
+    if (!GROUPS[group]) group = store.get("tab", "rumah");
+    if (!GROUPS[group]) group = "rumah";
+    store.set("tab", group);
+
+    const tabs = Object.keys(GROUPS).map((g) => {
+      const keys = Object.keys(CATEGORIES).filter((k) => CATEGORIES[k].group === g);
+      const topics = ALL.filter((c) => keys.includes(c.category));
+      const n = topics.filter((c) => done[c.category + "/" + c.id]).length;
+      const active = g === group;
+      return `
+        <a class="tab${active ? " active" : ""}" href="#/${g}"${active ? ` aria-current="page"` : ""}>
+          <span class="tab-label">${GROUPS[g].emoji} ${esc(GROUPS[g].label)}</span>
+          <span class="tab-meta">${n} / ${topics.length} tema</span>
+        </a>`;
+    }).join("");
+
+    const cats = Object.keys(CATEGORIES).filter((key) => CATEGORIES[key].group === group).map((key) => {
       const c = CATEGORIES[key];
       const list = byCategory(key);
       const n = list.filter((x) => done[key + "/" + x.id]).length;
@@ -178,10 +200,13 @@
       <p class="sub">Pilih kategori, baca percakapannya, dengarkan audionya, lalu praktikkan bergantian peran.</p>
       <input class="search" id="search" type="search" placeholder="Cari tema… (mis. breakfast, code review)">
       <div id="results"></div>
-      <div class="grid" id="cats">${cats}</div>
+      <div id="browse">
+        <nav class="tabs" aria-label="Kelompok">${tabs}</nav>
+        <div class="grid">${cats}</div>
+      </div>
       ${tts.supported ? "" : `<p class="empty">⚠️ Browser ini tidak mendukung suara (Text-to-Speech). Coba Chrome, Edge, atau Safari.</p>`}
     `;
-    bindSearch(ALL, document.getElementById("cats"));
+    bindSearch(ALL, document.getElementById("browse"));
   }
 
   function convCard(c) {
@@ -221,7 +246,7 @@
     if (!c) return viewNotFound();
     const list = byCategory(cat);
     app.innerHTML = `
-      <a class="crumb" href="#/">← Semua kategori</a>
+      <a class="crumb" href="#/${c.group}">← ${GROUPS[c.group].emoji} ${esc(GROUPS[c.group].label)}</a>
       <h1>${c.emoji} ${esc(c.nameId)}</h1>
       <p class="sub">${esc(c.desc)}</p>
       <input class="search" id="search" type="search" placeholder="Cari di ${esc(c.nameId)}…">
@@ -538,6 +563,7 @@
     tts.stop();
     const parts = location.hash.replace(/^#\/?/, "").split("/").filter(Boolean);
     if (parts.length === 0) viewHome();
+    else if (parts.length === 1 && GROUPS[parts[0]]) viewHome(parts[0]);
     else if (parts.length === 1) viewCategory(parts[0]);
     else viewConversation(parts[0], parts[1]);
     window.scrollTo(0, 0);

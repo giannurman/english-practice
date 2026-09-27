@@ -7,12 +7,15 @@ Web statis — tanpa instalasi, tanpa server, tanpa internet.
 
 1. Buka `index.html` di **Chrome, Edge, atau Safari** (klik dua kali file-nya).
    Di HP: salin folder ini ke HP lalu buka `index.html` dengan browser, atau host di GitHub Pages.
-2. Pilih kategori: **Keluarga**, **Untuk Anak**, **Kantor — Tech Lead**, **Kantor — Santai**
-   (small talk: pantry, makan siang, hobi, ulang tahun, farewell, dll), atau **Sales — Tech B2B**
-   (cold call sampai renewal; latih dari sisi sales maupun pelanggan lewat role-play), atau
-   **Project Manager — IT** (kickoff, status update, risiko, change request, stakeholder, go-live), atau
-   **Product Manager** (riset pengguna, roadmap, prioritas, A/B test, peluncuran produk), atau
-   **UI/UX Designer** (usability test, design critique, handoff, design QA, revisi klien).
+2. Pilih tab, lalu kategori. Kolom pencarian di beranda mencari di semua kategori.
+   - **🏠 Rumah** (`#/rumah`): **Keluarga** dan **Untuk Anak**.
+   - **💼 Kerja** (`#/kerja`): **Kantor — Tech Lead**, **Kantor — Santai** (small talk: pantry,
+     makan siang, hobi, ulang tahun, farewell), **Sales — Tech B2B** (cold call sampai renewal; latih
+     dari sisi sales maupun pelanggan), **Project Manager — IT** (kickoff, status update, risiko,
+     change request, go-live), **Product Manager** (riset pengguna, roadmap, prioritas, A/B test),
+     dan **UI/UX Designer** (usability test, design critique, handoff, design QA, revisi klien).
+
+   Link tab bisa dibagikan langsung, misalnya `…/index.html#/kerja` untuk rekan kantor.
 3. Di setiap percakapan:
    - **🔊** dengarkan satu kalimat · **▶ Play all** dengarkan seluruh dialog.
    - **Tombol kecepatan** (kanan atas) → 🐢 0.7x untuk anak / latihan pelafalan.
@@ -56,6 +59,10 @@ Tambahkan objek baru di `data/family.js`, `data/kids.js`, `data/office.js`, `dat
 
 Nama peran baru (mis. "Doctor") akan memakai avatar default 🙂. Untuk avatar & warna khusus,
 tambahkan di `ROLE_META` pada `js/app.js`.
+
+**Kategori baru:** buat file `data/<nama>.js`, tambahkan `<script>`-nya di `index.html`, lalu daftarkan
+di `CATEGORIES` pada `js/app.js` dengan field `group: "rumah"` atau `group: "kerja"` untuk menentukan
+tab-nya. Tambahkan juga warna `--<nama>` dan kelas `.cat-<nama>` di `css/style.css`.
 
 ## Struktur
 
