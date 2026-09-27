@@ -20,6 +20,7 @@
     security: { group: "kerja", name: "IT Security", nameId: "IT Security", emoji: "🛡️", desc: "SOC, kerentanan aplikasi, pentest, audit, dan komunikasi risiko." },
     pmo:    { group: "kerja", name: "PMO / Portfolio", nameId: "PMO / Portfolio", emoji: "🗃️", desc: "Prioritas & pendanaan proyek, kapasitas, stage-gate, dan laporan portofolio." },
     bizops: { group: "kerja", name: "Business Operations", nameId: "Business Operations", emoji: "⚙️", desc: "KPI, perbaikan proses, SOP, vendor, anggaran, dan koordinasi antar divisi." },
+    staff:  { group: "kerja", name: "Staff Engineer", nameId: "Staff Engineer", emoji: "🔭", desc: "RFC, arsitektur lintas tim, strategi teknis, tech debt, dan mentoring." },
   };
 
   const ROLE_META = {
@@ -90,6 +91,10 @@
     "Team Lead": { emoji: "🔔", bg: "#ffedd5", fg: "#c2410c" },
     Vendor:    { emoji: "🚚", bg: "#e2e8f0", fg: "#334155" },
     "Process Analyst": { emoji: "🗒️", bg: "#cffafe", fg: "#0e7490" },
+    // Staff Engineer
+    "Staff Engineer": { emoji: "🧙", bg: "#fae8ff", fg: "#86198f" },
+    "VP Engineering": { emoji: "📡", bg: "#e0e7ff", fg: "#4338ca" },
+    "Senior Engineer": { emoji: "🌿", bg: "#dcfce7", fg: "#15803d" },
   };
   const FALLBACK_ROLE = { emoji: "🙂", bg: "#f1f5f9", fg: "#475569" };
 

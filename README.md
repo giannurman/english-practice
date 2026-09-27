@@ -15,8 +15,9 @@ Web statis — tanpa instalasi, tanpa server, tanpa internet.
      change request, go-live), **Product Manager** (riset pengguna, roadmap, prioritas, A/B test),
      **UI/UX Designer** (usability test, design critique, handoff, design QA, revisi klien), dan
      **IT Security** (SOC, temuan kerentanan, threat modeling, pentest, audit, laporan risiko ke direksi),
-     **PMO / Portfolio** (prioritas & pendanaan proyek, kapasitas, stage-gate, menghentikan proyek), dan
-     **Business Operations** (KPI, perbaikan proses, SOP, vendor, anggaran, koordinasi antar divisi).
+     **PMO / Portfolio** (prioritas & pendanaan proyek, kapasitas, stage-gate, menghentikan proyek),
+     **Business Operations** (KPI, perbaikan proses, SOP, vendor, anggaran, koordinasi antar divisi), dan
+     **Staff Engineer** (RFC, review arsitektur lintas tim, strategi teknis, tech debt, mentoring).
 
    Link tab bisa dibagikan langsung, misalnya `…/index.html#/kerja` untuk rekan kantor.
 3. Di setiap percakapan:
@@ -39,12 +40,12 @@ Web statis — tanpa instalasi, tanpa server, tanpa internet.
 
 ## Menambah percakapan
 
-Tambahkan objek baru di `data/family.js`, `data/kids.js`, `data/office.js`, `data/casual.js`, `data/sales.js`, `data/pm.js`, `data/product.js`, `data/design.js`, `data/security.js`, `data/pmo.js`, atau `data/bizops.js`:
+Tambahkan objek baru di `data/family.js`, `data/kids.js`, `data/office.js`, `data/casual.js`, `data/sales.js`, `data/pm.js`, `data/product.js`, `data/design.js`, `data/security.js`, `data/pmo.js`, `data/bizops.js`, atau `data/staff.js`:
 
 ```js
 {
   id: "at-the-doctor",            // unik, huruf kecil, pakai tanda -
-  category: "family",             // family | kids | office | casual | sales | pm | product | design | security | pmo | bizops
+  category: "family",             // family | kids | office | casual | sales | pm | product | design | security | pmo | bizops | staff
   emoji: "🩺",                    // hindari emoji gabungan (mis. 👩‍⚕️) — tidak tampil benar di Windows 10
   title: "At the Doctor",
   titleId: "Di Dokter",
