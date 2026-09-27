@@ -7,6 +7,7 @@
     kids:   { name: "Kids", nameId: "Untuk Anak", emoji: "🧸", desc: "Kalimat super pendek untuk Adik (3 th) & Kakak (6 th)." },
     office: { name: "Office", nameId: "Kantor — Tech Lead", emoji: "💼", desc: "Stand-up, code review, 1-on-1, incident, dan lainnya." },
     casual: { name: "Office Casual", nameId: "Kantor — Santai", emoji: "☕", desc: "Obrolan pantry, makan siang, hobi, dan momen kantor." },
+    sales:  { name: "Tech Sales", nameId: "Sales — Tech B2B", emoji: "📈", desc: "Discovery call, demo, negosiasi, dan renewal — dari sisi sales dan pelanggan." },
   };
 
   const ROLE_META = {
@@ -30,6 +31,13 @@
     Sarah:     { emoji: "🌻", bg: "#fef9c3", fg: "#a16207" },
     Dimas:     { emoji: "⚽", bg: "#ccfbf1", fg: "#0f766e" },
     Waiter:    { emoji: "🍽️", bg: "#f1f5f9", fg: "#475569" },
+    // Sales: sisi penjual (biru/hijau) dan sisi pembeli (hangat)
+    "Sales Rep": { emoji: "🤝", bg: "#dbeafe", fg: "#1d4ed8" },
+    "Solutions Engineer": { emoji: "🛠️", bg: "#ccfbf1", fg: "#0f766e" },
+    "Customer Success": { emoji: "🌟", bg: "#dcfce7", fg: "#15803d" },
+    "IT Manager": { emoji: "🖥️", bg: "#ffedd5", fg: "#c2410c" },
+    CTO:       { emoji: "🎯", bg: "#fce7f3", fg: "#be185d" },
+    Procurement: { emoji: "📑", bg: "#ede9fe", fg: "#6d28d9" },
   };
   const FALLBACK_ROLE = { emoji: "🙂", bg: "#f1f5f9", fg: "#475569" };
 

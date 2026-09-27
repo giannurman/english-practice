@@ -7,8 +7,9 @@ Web statis — tanpa instalasi, tanpa server, tanpa internet.
 
 1. Buka `index.html` di **Chrome, Edge, atau Safari** (klik dua kali file-nya).
    Di HP: salin folder ini ke HP lalu buka `index.html` dengan browser, atau host di GitHub Pages.
-2. Pilih kategori: **Keluarga**, **Untuk Anak**, **Kantor — Tech Lead**, atau **Kantor — Santai**
-   (small talk: pantry, makan siang, hobi, ulang tahun, farewell, dll).
+2. Pilih kategori: **Keluarga**, **Untuk Anak**, **Kantor — Tech Lead**, **Kantor — Santai**
+   (small talk: pantry, makan siang, hobi, ulang tahun, farewell, dll), atau **Sales — Tech B2B**
+   (cold call sampai renewal; latih dari sisi sales maupun pelanggan lewat role-play).
 3. Di setiap percakapan:
    - **🔊** dengarkan satu kalimat · **▶ Play all** dengarkan seluruh dialog.
    - **Tombol kecepatan** (kanan atas) → 🐢 0.7x untuk anak / latihan pelafalan.
@@ -29,12 +30,12 @@ Web statis — tanpa instalasi, tanpa server, tanpa internet.
 
 ## Menambah percakapan
 
-Tambahkan objek baru di `data/family.js`, `data/kids.js`, `data/office.js`, atau `data/casual.js`:
+Tambahkan objek baru di `data/family.js`, `data/kids.js`, `data/office.js`, `data/casual.js`, atau `data/sales.js`:
 
 ```js
 {
   id: "at-the-doctor",            // unik, huruf kecil, pakai tanda -
-  category: "family",             // family | kids | office | casual
+  category: "family",             // family | kids | office | casual | sales
   emoji: "🩺",                    // hindari emoji gabungan (mis. 👩‍⚕️) — tidak tampil benar di Windows 10
   title: "At the Doctor",
   titleId: "Di Dokter",
