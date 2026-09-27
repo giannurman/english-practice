@@ -17,6 +17,7 @@
     pm:     { group: "kerja", name: "Project Manager", nameId: "Project Manager — IT", emoji: "📌", desc: "Kickoff, status update, risiko, change request, stakeholder, hingga go-live." },
     product: { group: "kerja", name: "Product Manager", nameId: "Product Manager", emoji: "💡", desc: "Riset pengguna, roadmap, prioritas, A/B test, dan peluncuran produk digital." },
     design: { group: "kerja", name: "UI/UX Designer", nameId: "UI/UX Designer", emoji: "🎨", desc: "Usability test, design critique, handoff, design QA, dan klien." },
+    security: { group: "kerja", name: "IT Security", nameId: "IT Security", emoji: "🛡️", desc: "SOC, kerentanan aplikasi, pentest, audit, dan komunikasi risiko." },
   };
 
   const ROLE_META = {
@@ -66,6 +67,17 @@
     Participant: { emoji: "🗨️", bg: "#fef3c7", fg: "#b45309" },
     "Senior Designer": { emoji: "🖌️", bg: "#ffe4e6", fg: "#be123c" },
     "Hiring Manager": { emoji: "🗂️", bg: "#e0e7ff", fg: "#4338ca" },
+    // IT Security
+    "SOC Analyst": { emoji: "🛰️", bg: "#e2e8f0", fg: "#334155" },
+    "Night Analyst": { emoji: "🌙", bg: "#e0e7ff", fg: "#4338ca" },
+    "Incident Responder": { emoji: "🚨", bg: "#fee2e2", fg: "#b91c1c" },
+    Employee:  { emoji: "🏷️", bg: "#fef3c7", fg: "#b45309" },
+    "AppSec Engineer": { emoji: "🔐", bg: "#e2e8f0", fg: "#334155" },
+    "Penetration Tester": { emoji: "🕵️", bg: "#fae8ff", fg: "#a21caf" },
+    Auditor:   { emoji: "🔎", bg: "#ffedd5", fg: "#c2410c" },
+    "GRC Analyst": { emoji: "⚖️", bg: "#e2e8f0", fg: "#334155" },
+    "Engineering Manager": { emoji: "👥", bg: "#dcfce7", fg: "#15803d" },
+    CISO:      { emoji: "🏰", bg: "#e2e8f0", fg: "#334155" },
   };
   const FALLBACK_ROLE = { emoji: "🙂", bg: "#f1f5f9", fg: "#475569" };
 

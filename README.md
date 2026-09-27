@@ -13,7 +13,8 @@ Web statis — tanpa instalasi, tanpa server, tanpa internet.
      makan siang, hobi, ulang tahun, farewell), **Sales — Tech B2B** (cold call sampai renewal; latih
      dari sisi sales maupun pelanggan), **Project Manager — IT** (kickoff, status update, risiko,
      change request, go-live), **Product Manager** (riset pengguna, roadmap, prioritas, A/B test),
-     dan **UI/UX Designer** (usability test, design critique, handoff, design QA, revisi klien).
+     **UI/UX Designer** (usability test, design critique, handoff, design QA, revisi klien), dan
+     **IT Security** (SOC, temuan kerentanan, threat modeling, pentest, audit, laporan risiko ke direksi).
 
    Link tab bisa dibagikan langsung, misalnya `…/index.html#/kerja` untuk rekan kantor.
 3. Di setiap percakapan:
@@ -36,12 +37,12 @@ Web statis — tanpa instalasi, tanpa server, tanpa internet.
 
 ## Menambah percakapan
 
-Tambahkan objek baru di `data/family.js`, `data/kids.js`, `data/office.js`, `data/casual.js`, `data/sales.js`, `data/pm.js`, `data/product.js`, atau `data/design.js`:
+Tambahkan objek baru di `data/family.js`, `data/kids.js`, `data/office.js`, `data/casual.js`, `data/sales.js`, `data/pm.js`, `data/product.js`, `data/design.js`, atau `data/security.js`:
 
 ```js
 {
   id: "at-the-doctor",            // unik, huruf kecil, pakai tanda -
-  category: "family",             // family | kids | office | casual | sales | pm | product | design
+  category: "family",             // family | kids | office | casual | sales | pm | product | design | security
   emoji: "🩺",                    // hindari emoji gabungan (mis. 👩‍⚕️) — tidak tampil benar di Windows 10
   title: "At the Doctor",
   titleId: "Di Dokter",
