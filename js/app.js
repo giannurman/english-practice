@@ -10,6 +10,7 @@
     sales:  { name: "Tech Sales", nameId: "Sales — Tech B2B", emoji: "📈", desc: "Discovery call, demo, negosiasi, dan renewal — dari sisi sales dan pelanggan." },
     pm:     { name: "Project Manager", nameId: "Project Manager — IT", emoji: "📌", desc: "Kickoff, status update, risiko, change request, stakeholder, hingga go-live." },
     product: { name: "Product Manager", nameId: "Product Manager", emoji: "💡", desc: "Riset pengguna, roadmap, prioritas, A/B test, dan peluncuran produk digital." },
+    design: { name: "UI/UX Designer", nameId: "UI/UX Designer", emoji: "🎨", desc: "Usability test, design critique, handoff, design QA, dan klien." },
   };
 
   const ROLE_META = {
@@ -55,6 +56,10 @@
     "Data Analyst": { emoji: "📊", bg: "#e0e7ff", fg: "#4338ca" },
     Marketing: { emoji: "📣", bg: "#fce7f3", fg: "#be185d" },
     "Support Lead": { emoji: "🎧", bg: "#ccfbf1", fg: "#0f766e" },
+    // UI/UX Designer
+    Participant: { emoji: "🗨️", bg: "#fef3c7", fg: "#b45309" },
+    "Senior Designer": { emoji: "🖌️", bg: "#ffe4e6", fg: "#be123c" },
+    "Hiring Manager": { emoji: "🗂️", bg: "#e0e7ff", fg: "#4338ca" },
   };
   const FALLBACK_ROLE = { emoji: "🙂", bg: "#f1f5f9", fg: "#475569" };
 

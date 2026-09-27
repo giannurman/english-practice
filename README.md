@@ -11,7 +11,8 @@ Web statis — tanpa instalasi, tanpa server, tanpa internet.
    (small talk: pantry, makan siang, hobi, ulang tahun, farewell, dll), atau **Sales — Tech B2B**
    (cold call sampai renewal; latih dari sisi sales maupun pelanggan lewat role-play), atau
    **Project Manager — IT** (kickoff, status update, risiko, change request, stakeholder, go-live), atau
-   **Product Manager** (riset pengguna, roadmap, prioritas, A/B test, peluncuran produk).
+   **Product Manager** (riset pengguna, roadmap, prioritas, A/B test, peluncuran produk), atau
+   **UI/UX Designer** (usability test, design critique, handoff, design QA, revisi klien).
 3. Di setiap percakapan:
    - **🔊** dengarkan satu kalimat · **▶ Play all** dengarkan seluruh dialog.
    - **Tombol kecepatan** (kanan atas) → 🐢 0.7x untuk anak / latihan pelafalan.
@@ -32,12 +33,12 @@ Web statis — tanpa instalasi, tanpa server, tanpa internet.
 
 ## Menambah percakapan
 
-Tambahkan objek baru di `data/family.js`, `data/kids.js`, `data/office.js`, `data/casual.js`, `data/sales.js`, `data/pm.js`, atau `data/product.js`:
+Tambahkan objek baru di `data/family.js`, `data/kids.js`, `data/office.js`, `data/casual.js`, `data/sales.js`, `data/pm.js`, `data/product.js`, atau `data/design.js`:
 
 ```js
 {
   id: "at-the-doctor",            // unik, huruf kecil, pakai tanda -
-  category: "family",             // family | kids | office | casual | sales | pm | product
+  category: "family",             // family | kids | office | casual | sales | pm | product | design
   emoji: "🩺",                    // hindari emoji gabungan (mis. 👩‍⚕️) — tidak tampil benar di Windows 10
   title: "At the Doctor",
   titleId: "Di Dokter",
