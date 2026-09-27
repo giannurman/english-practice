@@ -9,6 +9,7 @@
     casual: { name: "Office Casual", nameId: "Kantor — Santai", emoji: "☕", desc: "Obrolan pantry, makan siang, hobi, dan momen kantor." },
     sales:  { name: "Tech Sales", nameId: "Sales — Tech B2B", emoji: "📈", desc: "Discovery call, demo, negosiasi, dan renewal — dari sisi sales dan pelanggan." },
     pm:     { name: "Project Manager", nameId: "Project Manager — IT", emoji: "📌", desc: "Kickoff, status update, risiko, change request, stakeholder, hingga go-live." },
+    product: { name: "Product Manager", nameId: "Product Manager", emoji: "💡", desc: "Riset pengguna, roadmap, prioritas, A/B test, dan peluncuran produk digital." },
   };
 
   const ROLE_META = {
@@ -47,6 +48,13 @@
     QA:        { emoji: "🐞", bg: "#dcfce7", fg: "#15803d" },
     Designer:  { emoji: "🎨", bg: "#fce7f3", fg: "#be185d" },
     "Platform Lead": { emoji: "🧱", bg: "#fef3c7", fg: "#b45309" },
+    // Product Manager
+    "Product Manager": { emoji: "🧠", bg: "#ecfccb", fg: "#4d7c0f" },
+    Customer:  { emoji: "👤", bg: "#ffedd5", fg: "#c2410c" },
+    "UX Researcher": { emoji: "🔬", bg: "#e0f2fe", fg: "#0369a1" },
+    "Data Analyst": { emoji: "📊", bg: "#e0e7ff", fg: "#4338ca" },
+    Marketing: { emoji: "📣", bg: "#fce7f3", fg: "#be185d" },
+    "Support Lead": { emoji: "🎧", bg: "#ccfbf1", fg: "#0f766e" },
   };
   const FALLBACK_ROLE = { emoji: "🙂", bg: "#f1f5f9", fg: "#475569" };
 
