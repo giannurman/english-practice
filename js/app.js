@@ -8,6 +8,7 @@
     office: { name: "Office", nameId: "Kantor — Tech Lead", emoji: "💼", desc: "Stand-up, code review, 1-on-1, incident, dan lainnya." },
     casual: { name: "Office Casual", nameId: "Kantor — Santai", emoji: "☕", desc: "Obrolan pantry, makan siang, hobi, dan momen kantor." },
     sales:  { name: "Tech Sales", nameId: "Sales — Tech B2B", emoji: "📈", desc: "Discovery call, demo, negosiasi, dan renewal — dari sisi sales dan pelanggan." },
+    pm:     { name: "Project Manager", nameId: "Project Manager — IT", emoji: "📌", desc: "Kickoff, status update, risiko, change request, stakeholder, hingga go-live." },
   };
 
   const ROLE_META = {
@@ -38,6 +39,14 @@
     "IT Manager": { emoji: "🖥️", bg: "#ffedd5", fg: "#c2410c" },
     CTO:       { emoji: "🎯", bg: "#fce7f3", fg: "#be185d" },
     Procurement: { emoji: "📑", bg: "#ede9fe", fg: "#6d28d9" },
+    // Project Manager
+    "Project Manager": { emoji: "🧭", bg: "#ede9fe", fg: "#6d28d9" },
+    Sponsor:   { emoji: "🏦", bg: "#e0e7ff", fg: "#4338ca" },
+    Client:    { emoji: "🏢", bg: "#ffedd5", fg: "#c2410c" },
+    "Business Analyst": { emoji: "📐", bg: "#ccfbf1", fg: "#0f766e" },
+    QA:        { emoji: "🐞", bg: "#dcfce7", fg: "#15803d" },
+    Designer:  { emoji: "🎨", bg: "#fce7f3", fg: "#be185d" },
+    "Platform Lead": { emoji: "🧱", bg: "#fef3c7", fg: "#b45309" },
   };
   const FALLBACK_ROLE = { emoji: "🙂", bg: "#f1f5f9", fg: "#475569" };
 

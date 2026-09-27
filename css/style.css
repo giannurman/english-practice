@@ -12,6 +12,7 @@
   --office: #2f6fdb;
   --casual: #0d9488;
   --sales: #c2410c;
+  --pm: #7c3aed;
   --radius: 14px;
   --shadow: 0 1px 3px rgba(0, 0, 0, .06), 0 4px 12px rgba(0, 0, 0, .04);
   color-scheme: light;
@@ -145,6 +146,7 @@ h2 { font-size: 19px; margin: 28px 0 10px; }
 .cat-office { --cat: var(--office); }
 .cat-casual { --cat: var(--casual); }
 .cat-sales { --cat: var(--sales); }
+.cat-pm { --cat: var(--pm); }
 
 .big-card { padding: 20px; }
 .big-card .emoji { font-size: 40px; }
