@@ -21,6 +21,8 @@
     pmo:    { group: "kerja", name: "PMO / Portfolio", nameId: "PMO / Portfolio", emoji: "🗃️", desc: "Prioritas & pendanaan proyek, kapasitas, stage-gate, dan laporan portofolio." },
     bizops: { group: "kerja", name: "Business Operations", nameId: "Business Operations", emoji: "⚙️", desc: "KPI, perbaikan proses, SOP, vendor, anggaran, dan koordinasi antar divisi." },
     staff:  { group: "kerja", name: "Staff Engineer", nameId: "Staff Engineer", emoji: "🔭", desc: "RFC, arsitektur lintas tim, strategi teknis, tech debt, dan mentoring." },
+    ceo:    { group: "kerja", name: "CEO", nameId: "CEO / Eksekutif", emoji: "👑", desc: "Visi, board & investor, tim eksekutif, restrukturisasi, dan komunikasi krisis." },
+    director: { group: "kerja", name: "Director of Engineering", nameId: "Director of Engineering", emoji: "🏛️", desc: "Headcount, planning lintas tim, kalibrasi performa, re-org, dan eskalasi." },
   };
 
   const ROLE_META = {
@@ -95,6 +97,16 @@
     "Staff Engineer": { emoji: "🧙", bg: "#fae8ff", fg: "#86198f" },
     "VP Engineering": { emoji: "📡", bg: "#e0e7ff", fg: "#4338ca" },
     "Senior Engineer": { emoji: "🌿", bg: "#dcfce7", fg: "#15803d" },
+    // CEO
+    CEO:       { emoji: "👑", bg: "#fee2e2", fg: "#b91c1c" },
+    CFO:       { emoji: "🧮", bg: "#dcfce7", fg: "#15803d" },
+    CHRO:      { emoji: "🧡", bg: "#fce7f3", fg: "#be185d" },
+    "Board Member": { emoji: "🎩", bg: "#e2e8f0", fg: "#334155" },
+    Investor:  { emoji: "💼", bg: "#fef3c7", fg: "#a16207" },
+    Journalist: { emoji: "🎙️", bg: "#ffedd5", fg: "#c2410c" },
+    "Partner CEO": { emoji: "🤝", bg: "#ccfbf1", fg: "#0f766e" },
+    // Director of Engineering
+    "Product Director": { emoji: "🧩", bg: "#ecfccb", fg: "#4d7c0f" },
   };
   const FALLBACK_ROLE = { emoji: "🙂", bg: "#f1f5f9", fg: "#475569" };
 
