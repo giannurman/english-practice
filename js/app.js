@@ -354,12 +354,12 @@
       </div>
 
       <div class="roleplay-box">
-        <p>🎭 <b>Role-play:</b> pilih peranmu. Kalimatmu disembunyikan, peran lain dibacakan — giliranmu, ucapkan kalimatnya lalu tekan <b>Next</b>.</p>
+        <p>🎭 <b>Role-play:</b> pilih peranmu. Kalimatmu disembunyikan, peran lain dibacakan — giliranmu, ucapkan kalimatnya lalu tekan <b>Next</b> (atau Enter).</p>
         <div class="roles">${roleButtons}</div>
         <div class="toolbar" id="rp-controls" hidden>
           <button class="btn good" id="rp-next">Next ▶</button>
           <button class="btn" id="rp-reveal">👀 Show</button>
-          <button class="btn" id="rp-exit">Keluar role-play</button>
+          <button class="btn" id="rp-exit">✕ Keluar</button>
         </div>
       </div>
 
@@ -388,8 +388,10 @@
     const rpControls = document.getElementById("rp-controls");
     const rpNext = document.getElementById("rp-next");
     const rpReveal = document.getElementById("rp-reveal");
+    const finishEl = document.querySelector(".finish");
     let myRole = null;
     let waitNext = null;
+    let finished = false; // dialog role-play selesai → tombol Next jadi "Ulangi"
 
     function setCurrent(i) {
       lineEls.forEach((el) => el.classList.toggle("current", +el.dataset.i === i));
@@ -491,12 +493,22 @@
       btn.addEventListener("click", () => startRolePlay(btn.dataset.role));
     });
 
+    function setFinished(on) {
+      finished = on;
+      rpNext.textContent = on ? "🔁 Ulangi" : "Next ▶";
+      if (on) rpNext.disabled = false;
+    }
+
     async function startRolePlay(role) {
       stopAll();
       myRole = role;
+      setFinished(false);
+      // Lepas fokus dari chip peran, supaya Enter/Spasi dipakai sebagai Next
+      if (document.activeElement) document.activeElement.blur();
       document.querySelectorAll(".role-pick").forEach((b) => b.classList.toggle("active", b.dataset.role === role));
       hideMine();
       rpControls.hidden = false;
+      finishEl.classList.add("rp-space");
       const token = tts.token;
 
       for (let i = 0; i < conv.lines.length; i++) {
@@ -516,10 +528,24 @@
         }
         await pause(300);
       }
-      if (token === tts.token) setCurrent(-1);
+      if (token === tts.token) { setCurrent(-1); setFinished(true); }
     }
 
-    rpNext.addEventListener("click", () => { if (waitNext) waitNext(true); });
+    rpNext.addEventListener("click", () => {
+      if (finished) startRolePlay(myRole);
+      else if (waitNext) waitNext(true);
+    });
+
+    // Enter/Spasi = Next selama role-play. Elemen interaktif yang sedang fokus tetap menangani tombolnya sendiri.
+    function onKey(e) {
+      if (e.key !== "Enter" && e.key !== " ") return;
+      if (e.target.matches("input, textarea, select, button, a, summary") && !e.target.disabled) return;
+      if (!finished && !waitNext) return;
+      e.preventDefault();
+      rpNext.click();
+    }
+    document.addEventListener("keydown", onKey);
+    window.addEventListener("hashchange", () => document.removeEventListener("keydown", onKey), { once: true });
     rpReveal.addEventListener("click", () => {
       const cur = lineEls.find((el) => el.classList.contains("current"));
       if (cur && cur.dataset.hiddenText) revealLine(cur);
@@ -529,7 +555,9 @@
       myRole = null;
       document.querySelectorAll(".role-pick").forEach((b) => b.classList.remove("active"));
       hideMine();
+      setFinished(false);
       rpControls.hidden = true;
+      finishEl.classList.remove("rp-space");
     });
 
     // ----- Progress -----
